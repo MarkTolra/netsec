@@ -20,9 +20,8 @@ then
   git clone https://github.com/leebaird/discover.git /opt/discover
   ./opt/discover/update.sh
   
-  git clone https://github.com/beefproject/beef /opt/beef
-  ./opt/beef/install
-  
+  apt intstall beef-xss
+  apt autoremove -y
   service postgresql start
   update-rc.d postgresql enable
   echo started postgresql
