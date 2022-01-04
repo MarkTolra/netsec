@@ -6,12 +6,12 @@ read -p "Install now? [yes/no] " str1
 if [ "$str1" == "yes" ]
 then
   apt update && apt upgrade -y
- 
+  
+  apt install gedit python3-pip python3-venv gcc make libpcap-dev -y
+  
   git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
   pip3 install /opt/impacket/.
   python3 /opt/impacket/setup.py
-  
-  apt install gedit python3-pip python3-venv gcc make libpcap-dev -y
   
   "pexpect~=4.8.0
 ptyprocess~=0.6.0
@@ -34,7 +34,7 @@ MechanicalSoup~=0.12.0"
   git clone https://github.com/leebaird/discover.git /opt/discover
   ./opt/discover/update.sh
   
-  apt intstall beef-xss
+  apt install beef-xss
   apt autoremove -y
   service postgresql start
   update-rc.d postgresql enable
